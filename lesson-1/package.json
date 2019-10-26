@@ -1,0 +1,29 @@
+{
+  "name": "goit-lesson1",
+  "version": "1.1.0",
+  "description": "Example repository",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_dev": "nodemon --inspect server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alucardpetrovich/goit-lesson1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alucardpetrovich/goit-lesson1/issues"
+  },
+  "homepage": "https://github.com/alucardpetrovich/goit-lesson1#readme",
+  "dependencies": {
+    "csv-parser": "^2.3.1",
+    "express": "^4.17.1"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*", "helpers/*"],
+    "delay": "2500"
+  }
+}
