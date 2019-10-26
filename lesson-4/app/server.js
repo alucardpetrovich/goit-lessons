@@ -11,7 +11,7 @@ async function main() {
     server.use(bodyParser());
     server.use('/questions', QuestionsRouter);
 
-    await mongoose.connect('mongodb+srv://levkiv:1234567890@testcluster-oqqlz.mongodb.net/test?retryWrites=true&w=majority');
+    await mongoose.connect(config.mongodb_url);
 
     server.listen(config.port, () => {
         console.log('Server listening on port', config.port);
