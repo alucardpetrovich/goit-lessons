@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/alucardpetrovich/goit-lesson3/issues"
   },
-  "homepage": "https://github.com/alucardpetrovich/goit-lesson3#readme"
+  "homepage": "https://github.com/alucardpetrovich/goit-lesson3#readme",
+  "dependencies": {
+    "csv-parser": "^2.3.1"
+  }
 }
