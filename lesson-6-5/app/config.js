@@ -1,4 +1,4 @@
 
 module.exports = {
-  port: 3060
+  port: process.env.PORT || 3060
 };
