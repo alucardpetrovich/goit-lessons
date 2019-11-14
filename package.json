@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/alucardpetrovich/goit-lessons/issues"
   },
-  "homepage": "https://github.com/alucardpetrovich/goit-lessons#readme"
+  "homepage": "https://github.com/alucardpetrovich/goit-lessons#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-validator": "^0.1.27",
+    "ws": "^7.2.0"
+  }
 }
