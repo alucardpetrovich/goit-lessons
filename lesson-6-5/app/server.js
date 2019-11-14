@@ -12,6 +12,8 @@ async function main() {
   const app = express();
   const server = http.createServer(app);
 
+  console.log('port', config.port);
+
   initMiddlewares(app);
   initRoutes(app);
   initWsRoutes(server);
