@@ -5,20 +5,28 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config');
 
-async function main() {
-    const server = express();
+if ( require.main === module ) {
+    main();
+} else {
+    module.exports = main;
+}
 
-    server.use(bodyParser());
-    server.use('/questions', QuestionsRouter);
+async function main() {
+    const app = express();
+
+    app.use(bodyParser());
+    app.use('/questions', QuestionsRouter);
 
     await mongoose.connect(config.mongodb_url);
 
-    server.listen(config.port, () => {
+
+    console.log('attaching server to port');
+    const server = app.listen(config.port, () => {
         console.log('Server listening on port', config.port);
     });
-}
 
-main();
+    return {app, server};
+}
 
 // const paths = Object.entries(QuestionsRouter)
 //     .map(([ routeStr, handler ]) => {

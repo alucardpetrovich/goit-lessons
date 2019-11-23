@@ -5,7 +5,7 @@ const sequelize = new Sequelize({
   host: 'localhost',
   database: 'postgis_test',
   dialect: 'postgres',
-  logging: false,
+  // logging: false,
 });
 
 async function main() {
@@ -41,7 +41,7 @@ async function main() {
     where: { title: 'New title' },
   })
 
-  const newPost = await BlogPost.findAll({
+  await BlogPost.findAll({
     where: { title: 'New title' },
     attributes: ['id']
   })
