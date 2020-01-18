@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const http = require('http');
-const chatRouter = require('./chat/chat.router');
+const http = require("http");
+const chatRouter = require("./chat/chat.router");
 const config = require("./config");
 
 global.socketsByUserId = new Map();
@@ -12,7 +12,7 @@ async function main() {
   const app = express();
   const server = http.createServer(app);
 
-  console.log('port', config.port);
+  console.log("port", config.port);
 
   initMiddlewares(app);
   initRoutes(app);
@@ -35,5 +35,5 @@ function initRoutes(app) {
 }
 
 function initWsRoutes(server) {
-  chatRouter.registerRouter('/chats', server);
+  chatRouter.registerRouter("/chats", server);
 }

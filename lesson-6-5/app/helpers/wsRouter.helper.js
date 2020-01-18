@@ -43,14 +43,14 @@ class WsRouter {
       );
     }
     if (data && data.userId) {
-      if (global.socketsByUserId.has(data.userId)) {
-        return socket.send(
-          JSON.stringify({
-            err: true,
-            data: `User ${data.userId} already connected`
-          })
-        );
-      }
+      // if (global.socketsByUserId.has(data.userId)) {
+      //   return socket.send(
+      //     JSON.stringify({
+      //       err: true,
+      //       data: `User ${data.userId} already connected`
+      //     })
+      //   );
+      // }
 
       global.socketsByUserId.set(data.userId, socket);
       socket.userId = data.userId;

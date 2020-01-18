@@ -1,12 +1,11 @@
-const initServer = require("../../lesson-4/app/server");
+require("should");
 const request = require("supertest-promised");
+const initServer = require("../../lesson-4/app/server");
 const sinon = require("sinon");
 const QuestionModel = require("../../lesson-4/app/models/questions.model");
-require("should");
 
 describe("Questions API", () => {
-  let server;
-  let app;
+  let server, app;
 
   before(async () => {
     const params = await initServer();
@@ -19,10 +18,9 @@ describe("Questions API", () => {
   });
 
   describe("#getRandomQuestion", () => {
-    it("should return question", async () => {
-      const responseBody = await request(app)
+    it("Should return question", async () => {
+      const responseBody = await request(server)
         .get("/questions/random")
-        .set("Accept", "application/json")
         .expect(200)
         .expect("Content-Type", /json/)
         .end()
