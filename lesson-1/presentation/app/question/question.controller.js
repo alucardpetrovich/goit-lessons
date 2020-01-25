@@ -6,6 +6,9 @@ class QuestionController {
   get createQuestion() {
     return this._createQuestion.bind(this);
   }
+  get getQuestions() {
+    return this._getQuestions.bind(this);
+  }
 
   async _createQuestion(req, res) {
     // questions.csv
@@ -25,6 +28,19 @@ class QuestionController {
 
     res.statusCode = 201;
     return res.end();
+  }
+
+  async _getQuestions(req, res) {
+    // 1. Fetch questions data
+    // 2. Set Content-Type header
+    // 3. Set status code
+    // 4. Send questions to client
+    const questions = await questionModel.getQuestions();
+
+    res.setHeader("Content-Type", "application/json");
+    // res.setHeader("Set-Cookie", )
+    res.statusCode = 200;
+    return res.end(JSON.stringify(questions));
   }
 }
 

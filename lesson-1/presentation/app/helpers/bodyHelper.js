@@ -6,6 +6,9 @@ class BodyHelper {
     });
 
     return new Promise((res, rej) => {
+      req.on("abort", () => {
+        rej("Request aborted");
+      });
       req.on("end", () => {
         res(body);
       });
