@@ -1,0 +1,17 @@
+{
+  "name": "1-nodejs-basics",
+  "version": "1.3.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "sinon": "^8.1.1"
+  }
+}
