@@ -1,47 +1,62 @@
 const express = require("express");
-const { port, mongodb_url } = require("./config");
+const { port, db_url, test_db_url } = require("./config");
 const questionRouter = require("./question/question.router");
 const mongoose = require("mongoose");
 
 class QuestionServer {
   constructor() {
-    this.server = null;
+    this.app = null;
     this.routes = [];
   }
 
-  async start() {
+  async start(isTest = false) {
+    this.isTest = isTest;
+
     this.initServer();
     await this.initDbConnection();
     this.initMiddlewares();
     this.initRoutes();
-    this.serverListen();
+    return this.serverListen();
   }
 
   initMiddlewares() {
-    this.server.use(express.json());
+    this.app.use(express.json());
   }
 
   initRoutes() {
-    this.server.use("/questions", questionRouter);
-    this.server.use((err, req, res, next) => {
+    this.app.use("/questions", questionRouter);
+    this.app.use((err, req, res, next) => {
       delete err.stack;
       next(err);
     });
   }
 
   initServer() {
-    this.server = express();
+    this.app = express();
   }
 
   async initDbConnection() {
-    await mongoose.connect(mongodb_url);
+    await mongoose.connect(this.isTest ? test_db_url : db_url);
   }
 
   serverListen() {
-    this.server.listen(port, () => {
+    return this.app.listen(port, () => {
       console.log("Server started listening on port", port);
     });
   }
+
+  async clearDb() {
+    try {
+      await mongoose.connection.db.dropDatabase();
+      console.log("Cleared up database");
+    } catch (err) {
+      console.log("Error occured when tried to clear MongoDB", err);
+    }
+  }
 }
 
-new QuestionServer().start();
+if (require.main === module) {
+  new QuestionServer().start();
+} else {
+  module.exports = QuestionServer;
+}

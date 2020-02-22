@@ -19,3 +19,9 @@ exports.ConflictError = class ConflictError extends AbstractError {
     super("ConflictError", 409, message);
   }
 };
+
+exports.UnauthorizedError = class UnauthorizedError extends AbstractError {
+  constructor(message) {
+    super("UnauthorizedError", 401, message);
+  }
+};

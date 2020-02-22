@@ -23,6 +23,7 @@ class QuestionServer {
     this.server.use(passport.initialize());
     this.server.use(express.json());
     PassportStrategies.initLocalStrategy();
+    PassportStrategies.initGoogleOAuthStrategy();
   }
 
   initRoutes() {

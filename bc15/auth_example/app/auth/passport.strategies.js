@@ -1,6 +1,10 @@
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleOAuthStrategy = require("passport-google-oauth2").Strategy;
 const passport = require("passport");
 const { UserModel } = require("../user/user.model");
+const {
+  oAuth: { google: googleOAuthCreds }
+} = require("../config");
 
 class PassportStrategies {
   initLocalStrategy() {
@@ -22,6 +26,26 @@ class PassportStrategies {
           return done(null, user);
         }
       )
+    );
+  }
+
+  initGoogleOAuthStrategy() {
+    passport.use(
+      new GoogleOAuthStrategy(googleOAuthCreds, async function(
+        request,
+        accessToken,
+        refreshToken,
+        profile,
+        done
+      ) {
+        try {
+          const { email, displayName } = profile;
+          const user = await UserModel.findOrCreate(email, displayName);
+          done(null, user);
+        } catch (err) {
+          done(err);
+        }
+      })
     );
   }
 }

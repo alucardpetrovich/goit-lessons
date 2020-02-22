@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const userSchema = new Schema(
   {
     name: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     passwordHash: { type: String, required: false },
     provider: {
       type: String,
@@ -21,6 +21,7 @@ const userSchema = new Schema(
 
 userSchema.statics.findByEmail = findByEmail;
 userSchema.statics.createUser = createUser;
+userSchema.statics.findOrCreate = findOrCreate;
 userSchema.methods.validPassword = validPassword;
 
 async function findByEmail(email) {
@@ -29,6 +30,14 @@ async function findByEmail(email) {
 
 async function createUser(userBody) {
   return this.create(userBody);
+}
+
+async function findOrCreate(email, name) {
+  return this.findOneAndUpdate(
+    { email },
+    { $setOnInsert: { provider: "google", name } },
+    { new: true, upsert: true }
+  );
 }
 
 async function validPassword(password) {

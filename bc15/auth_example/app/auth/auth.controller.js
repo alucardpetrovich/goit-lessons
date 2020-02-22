@@ -3,7 +3,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {
   ValidationError,
-  ConflictError
+  ConflictError,
+  UnauthorizedError
 } = require("../helpers/errors.constructor");
 const { UserModel } = require("../user/user.model");
 const { createControllerProxy } = require("../helpers/proxies");
@@ -52,6 +53,37 @@ class AuthController {
     return res.status(201).send({
       token
     });
+  }
+
+  async signOut(req, res) {
+    const { _id: sessionId } = req.session;
+
+    await SessionModel.disableSession(sessionId);
+
+    return res.status(204).send();
+  }
+
+  async authorize(req, res, next) {
+    const authHeader = req.get("Authorization");
+    const token = authHeader.replace("Bearer ", "");
+
+    let sessionId;
+    try {
+      const { id } = await jwt.verify(token, jwtSecret);
+      sessionId = id;
+    } catch (err) {
+      throw new UnauthorizedError(err);
+    }
+
+    const session = await SessionModel.getSessionById(sessionId);
+    if (session.status === "Disabled") {
+      throw new UnauthorizedError("Session is disabled");
+    }
+
+    req.user = session.user;
+    req.session = session;
+
+    next();
   }
 
   validateSignUpPlain(req, res, next) {

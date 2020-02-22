@@ -1,0 +1,19 @@
+{
+  "name": "unit_tests_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha '**/*.test.js' --exit --timeout 4000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2",
+    "supertest-promised": "^1.0.0"
+  }
+}

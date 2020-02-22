@@ -23,11 +23,21 @@ sessionSchema.virtual("user", {
 });
 
 sessionSchema.statics.createSession = createSession;
+sessionSchema.statics.getSessionById = getSessionById;
+sessionSchema.statics.disableSession = disableSession;
 
 async function createSession(userId) {
   return this.create({
     userId
   });
+}
+
+async function getSessionById(id) {
+  return this.findById(id).populate("user");
+}
+
+async function disableSession(id) {
+  return this.updateOne({ _id: id }, { $set: { status: "Disabled" } });
 }
 
 module.exports = {
