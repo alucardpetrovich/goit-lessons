@@ -12,6 +12,9 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "joi": "^14.3.1"
   }
 }
