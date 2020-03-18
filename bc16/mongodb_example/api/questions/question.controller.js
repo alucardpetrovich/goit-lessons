@@ -2,10 +2,15 @@ import { questionModel } from "./question.model";
 import Joi from "joi";
 import formidable from "formidable";
 import path from "path";
+import { NotFoundError } from "../errors.helper";
 
 export class QuestionController {
   get createQuestion() {
     return this._createQuestion.bind(this);
+  }
+
+  get getQuestion() {
+    return this._getQuestion.bind(this);
   }
 
   async getQuestions(req, res, next) {
@@ -13,6 +18,21 @@ export class QuestionController {
       const questions = await questionModel.getQuestions();
 
       return res.status(200).json(questions);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async _getQuestion(req, res, next) {
+    try {
+      const { questionId } = req.params;
+
+      const question = await questionModel.getQuestionById(questionId);
+      if (!question) {
+        throw new NotFoundError(`Question with id ${questionId} was not found`);
+      }
+
+      return res.status(200).json(question);
     } catch (err) {
       next(err);
     }

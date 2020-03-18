@@ -1,11 +1,11 @@
-export class BaseError extends Error {
+class BaseError extends Error {
   constructor(errorMessage) {
     super();
     this.message = errorMessage;
   }
 }
 
-export class ValidationError extends BaseError {
+class ValidationError extends BaseError {
   constructor(errorMessage) {
     super(errorMessage);
     this.name = "ValidationError";
@@ -13,7 +13,15 @@ export class ValidationError extends BaseError {
   }
 }
 
-export class UnauthorizedError extends BaseError {
+class NotFoundError extends BaseError {
+  constructor(errorMessage) {
+    super(errorMessage);
+    this.name = "NotFoundError";
+    this.status = 404;
+  }
+}
+
+class UnauthorizedError extends BaseError {
   constructor(errorMessage) {
     super(errorMessage);
     this.name = "UnauthorizedError";
@@ -21,10 +29,17 @@ export class UnauthorizedError extends BaseError {
   }
 }
 
-export class ForbiddenError extends BaseError {
+class ForbiddenError extends BaseError {
   constructor(errorMessage) {
     super(errorMessage);
     this.name = "ForbiddenError";
     this.status = 403;
   }
 }
+
+module.exports = {
+  ValidationError,
+  UnauthorizedError,
+  ForbiddenError,
+  NotFoundError
+};

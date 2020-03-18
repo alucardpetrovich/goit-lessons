@@ -4,6 +4,7 @@ import express from "express";
 const questionRouter = express.Router();
 
 questionRouter.get("/", questionController.getQuestions);
+questionRouter.get("/:questionId", questionController.getQuestion);
 questionRouter.post(
   "/",
   questionController.validateCreateQuestionBody,
