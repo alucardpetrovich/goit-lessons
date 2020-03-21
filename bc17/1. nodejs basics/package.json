@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-basics",
+  "version": "1.1.0",
+  "description": "",
+  "main": "file_for_import.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon express.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
+  }
+}
