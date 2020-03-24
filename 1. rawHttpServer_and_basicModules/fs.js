@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // const packageJsonSync = fs.readFileSync('./package.json');
 // fs.writeFileSync('./pack.json', 'Hello\n');
@@ -10,6 +10,6 @@ const fs = require('fs');
 //     console.log(data);
 // });
 
-fs.appendFileSync('./pack.json', 'Hello2', 'utf8');
+fs.appendFileSync("./pack.json", "Hello2", "utf8");
 
-
+console.log("hello world");
