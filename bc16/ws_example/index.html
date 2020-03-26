@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    var socket = io("http://localhost:3000", {
+      path: "/ws"
+    });
+
+    socket.connect();
+
+    socket.on("joinChatResponse", data => {
+      console.log("joinChatResponse", data);
+    });
+
+    socket.on("newUser", data => {
+      console.log("newUser", data);
+    });
+
+    socket.emit("joinChat", {
+      chatId: "1",
+      userId: "2"
+    });
+  </script>
+</html>
