@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bc17/2_web_service_example/api/server.js"
+    "start": "cd bc17/2_web_service_example && npm i && node api/server.js"
   },
   "repository": {
     "type": "git",
