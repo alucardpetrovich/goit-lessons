@@ -9,4 +9,4 @@ const { config } = require("./config");
 
 console.log("process.env", process.env);
 
-new QuestionsServer(config).start();
+new AuthServer(config).start();

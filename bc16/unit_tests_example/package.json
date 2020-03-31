@@ -1,0 +1,21 @@
+{
+  "name": "unit_tests_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha '**/*.spec.js' --exit --timeout 4000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.1",
+    "supertest": "^4.0.2",
+    "supertest-promised": "^1.0.0"
+  }
+}

@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import authRouter from "./auth/auth.router";
 import { PassportStrategies } from "./auth/passport.strategies";
 
-export class QuestionsServer {
+export class AuthServer {
   constructor(config) {
     this.server = null;
     this.routes = null;
@@ -16,7 +16,7 @@ export class QuestionsServer {
     this.initMiddlewares();
     this.initRoutes();
     await this.initDb();
-    this.startListening();
+    return this.startListening();
   }
 
   initRoutes() {
@@ -44,7 +44,7 @@ export class QuestionsServer {
   }
 
   startListening() {
-    this.server.listen(this.config.port, () => {
+    return this.server.listen(this.config.port, () => {
       console.log("Server started listening on port", this.config.port);
     });
   }
