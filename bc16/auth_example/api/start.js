@@ -6,7 +6,6 @@
 require = require("esm")(module);
 const { QuestionsServer } = require("./server");
 const { config } = require("./config");
-require("dotenv").config();
 
 console.log("process.env", process.env);
 
