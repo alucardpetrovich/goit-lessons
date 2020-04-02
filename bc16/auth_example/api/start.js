@@ -4,7 +4,7 @@
 // 4. deploy to heroku `git push heroku master`
 
 require = require("esm")(module);
-const { QuestionsServer } = require("./server");
+const { AuthServer } = require("./server");
 const { config } = require("./config");
 
 console.log("process.env", process.env);
