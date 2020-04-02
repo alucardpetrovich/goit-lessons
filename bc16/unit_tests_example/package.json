@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha '**/*.spec.js' --exit --timeout 4000"
+    "test": "mocha '**/*.spec.js' --exit --timeout 5000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "should": "^13.2.3"
   },
   "devDependencies": {
     "mocha": "^7.1.1",
