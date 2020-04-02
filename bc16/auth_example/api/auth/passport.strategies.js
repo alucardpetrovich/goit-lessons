@@ -5,7 +5,7 @@ import { userModel } from "../user/user.model";
 import { config } from "../config";
 
 export class PassportStrategies {
-  static initLocalPassportStrategy() {
+  initLocalPassportStrategy() {
     passport.use(
       new LocalStrategy(
         {
@@ -26,7 +26,7 @@ export class PassportStrategies {
     );
   }
 
-  static initGoogleOAuthStrategy() {
+  initGoogleOAuthStrategy() {
     passport.use(
       new GoogleOAuthStrategy(config.oAuthGoogle, async function(
         request,
@@ -44,3 +44,5 @@ export class PassportStrategies {
     );
   }
 }
+
+export const passportStrategies = new PassportStrategies();

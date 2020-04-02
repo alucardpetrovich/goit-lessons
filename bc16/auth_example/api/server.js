@@ -2,7 +2,7 @@ import express from "express";
 import passport from "passport";
 import mongoose from "mongoose";
 import authRouter from "./auth/auth.router";
-import { PassportStrategies } from "./auth/passport.strategies";
+import { passportStrategies } from "./auth/passport.strategies";
 
 export class AuthServer {
   constructor(config) {
@@ -32,8 +32,8 @@ export class AuthServer {
   }
 
   initMiddlewares() {
-    PassportStrategies.initLocalPassportStrategy();
-    PassportStrategies.initGoogleOAuthStrategy();
+    passportStrategies.initLocalPassportStrategy();
+    passportStrategies.initGoogleOAuthStrategy();
     this.server.use(passport.initialize());
     this.server.use(express.json());
     this.server.use(express.static("/tmp/questions"));
