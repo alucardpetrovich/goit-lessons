@@ -32,5 +32,6 @@
     "sinon": "^9.0.0",
     "supertest": "^4.0.2",
     "supertest-promised": "^1.0.0"
-  }
+  },
+  "keywords": []
 }
