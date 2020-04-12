@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./users/user.router");
+const filmRouter = require("./films/films.router");
 
 require("dotenv").config();
 
@@ -9,6 +10,7 @@ require("dotenv").config();
 // 3. init routes
 // 4. init db
 // 5. start listening
+mongoose.set("debug", true);
 
 module.exports = class UserServer {
   constructor() {
@@ -28,11 +30,13 @@ module.exports = class UserServer {
   }
 
   initMiddlewares() {
+    this.server.use(express.urlencoded());
     this.server.use(express.json());
   }
 
   initRoutes() {
     this.server.use("/users", userRouter);
+    this.server.use("/films", filmRouter);
   }
 
   async initDatabase() {

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alucardpetrovich/goit-lessons#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "bluebird": "^3.7.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
