@@ -22,7 +22,7 @@ module.exports = class UserServer {
     this.initMiddlewares();
     this.initRoutes();
     await this.initDatabase();
-    this.startListening();
+    return this.startListening();
   }
 
   initServer() {
@@ -46,7 +46,7 @@ module.exports = class UserServer {
   startListening() {
     const PORT = process.env.PORT;
 
-    this.server.listen(PORT, () => {
+    return this.server.listen(PORT, () => {
       console.log("Server listening on port", PORT);
     });
   }

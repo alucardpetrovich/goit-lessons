@@ -36,6 +36,9 @@ class UserController {
   get addFilmForUser() {
     return this._addFilmForUser.bind(this);
   }
+  get signIn() {
+    return this._signIn
+  }
 
   async _createUser(req, res, next) {
     try {
@@ -63,29 +66,35 @@ class UserController {
     }
   }
 
-  async signIn(req, res, next) {
+  async _signIn(req, res, next) {
     try {
       const { email, password } = req.body;
 
-      const user = await userModel.findUserByEmail(email);
-      if (!user) {
-        return res.status(401).send("Authentication failed");
-      }
-
-      const isPasswordValid = await bcryptjs.compare(password, user.password);
-      if (!isPasswordValid) {
-        return res.status(401).send("Authentication failed");
-      }
-
-      const token = await jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: 2 * 24 * 60 * 60, // two days
-      });
-      await userModel.updateToken(user._id, token);
+      const token = await this.checkUser(email, password);
 
       return res.status(200).json({ token });
     } catch (err) {
       next(err);
     }
+  }
+
+  async checkUser(email, password) {
+    const user = await userModel.findUserByEmail(email);
+    if (!user) {
+      throw new UnauthorizedError('Authentication failed');
+    }
+
+    const isPasswordValid = await bcryptjs.compare(password, user.password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedError('Authentication failed');
+    }
+
+    const token = await jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: 2 * 24 * 60 * 60, // two days
+    });
+    await userModel.updateToken(user._id, token);
+
+    return token;
   }
 
   async _getUsers(req, res, next) {
