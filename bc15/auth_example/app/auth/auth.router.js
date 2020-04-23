@@ -22,17 +22,16 @@ authRouter.get(
     scope: [
       "https://www.googleapis.com/auth/plus.login",
       "https://www.googleapis.com/auth/plus.profile.emails.read",
-      "https://www.googleapis.com/auth/userinfo.email"
+      "https://www.googleapis.com/auth/userinfo.email",
     ],
-    session: false
-  }),
-  authController.createSession
+    session: false,
+  })
 );
 
 authRouter.get(
   "/google/callback",
   passport.authenticate("google", {
-    session: false
+    session: false,
   }),
   authController.createSession
 );

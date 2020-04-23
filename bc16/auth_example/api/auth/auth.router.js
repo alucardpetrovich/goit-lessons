@@ -21,10 +21,9 @@ authRouter.get(
     session: false,
     scope: [
       "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/plus.login"
-    ]
-  }),
-  authController.createSession
+      "https://www.googleapis.com/auth/plus.login",
+    ],
+  })
 );
 
 authRouter.get(
