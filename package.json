@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd rn10/2_express_example && npm i && node api/server.js"
+    "start": "cd rn10/2_express_example && npm i && node server.js"
   },
   "repository": {
     "type": "git",
