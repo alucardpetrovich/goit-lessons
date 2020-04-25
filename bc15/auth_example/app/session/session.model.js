@@ -3,13 +3,13 @@ const { Schema } = mongoose;
 
 const sessionSchema = new Schema(
   {
-    userId: { type: mongoose.Types.ObjectId, required: true },
+    userId: { type: mongoose.Types.ObjectId, required: true, ref: 'User' },
     status: {
       type: String,
       required: true,
       enum: ["Active", "Disabled"],
       default: "Active"
-    }
+    },
   },
   {
     timestamps: true
