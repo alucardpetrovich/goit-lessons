@@ -1,11 +1,12 @@
 const Sequelize = require("sequelize");
 
 const dbConnection = new Sequelize({
+  // your connection parameters
   dialect: "postgres",
-  host: "35.189.246.201",
-  username: "sequelize_example",
-  password: "qwerty",
-  database: "sequelize_test",
+  host: "",
+  username: "",
+  password: "",
+  database: "",
 });
 
 async function main() {
