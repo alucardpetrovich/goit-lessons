@@ -6,4 +6,8 @@
 
 ### 4. Create Heroku application (command `heroku create`)
 
-### 5. 
+### 5. Write npm start script in root package.json
+
+### 6. Take heroku's port for listening (process.env.PORT)
+
+### 7. Set env variables (command `heroku config:set`)

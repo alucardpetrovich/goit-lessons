@@ -7,7 +7,7 @@ const Joi = require("@hapi/joi");
 const axios = require("axios");
 const cors = require("cors");
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 const ALLOWED_ORIGIN = "http://localhost:3000";
 
 const server = express();
