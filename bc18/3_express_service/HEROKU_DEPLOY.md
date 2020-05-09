@@ -11,3 +11,5 @@
 ### 6. Take heroku's port for listening (process.env.PORT)
 
 ### 7. Set env variables (command `heroku config:set`)
+
+### 8. Push your server code on heroku (git push heroku master)

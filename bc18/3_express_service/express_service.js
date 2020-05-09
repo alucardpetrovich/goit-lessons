@@ -12,6 +12,7 @@ const ALLOWED_ORIGIN = "http://localhost:3000";
 
 const server = express();
 
+/////// Manual cors
 server.use((req, res, next) => {
   res.set("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
   next();
@@ -29,8 +30,11 @@ server.options((req, res, next) => {
 
   return res.status(200).send();
 });
+/////// END: Manual cors
 
+/////// cors lib
 // server.use(cors({ origin: ALLOWED_ORIGIN }));
+/////// END: cors lib
 
 server.get("/forecast", validateForecastParamsJoi, async (req, res, next) => {
   const { ln, lat } = req.query;
