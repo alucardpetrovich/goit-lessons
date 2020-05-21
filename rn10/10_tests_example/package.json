@@ -1,0 +1,25 @@
+{
+  "name": "10_tests_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha '**/*.test.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@sinonjs/referee-sinon": "^7.0.2",
+    "jsverify": "^0.8.4",
+    "knuth-shuffle": "^1.0.8",
+    "mocha": "^7.1.2",
+    "should": "^13.2.3",
+    "sinon": "^9.0.2"
+  }
+}
