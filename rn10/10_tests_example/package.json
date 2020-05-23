@@ -12,7 +12,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@sinonjs/referee-sinon": "^7.0.2",

@@ -8,6 +8,7 @@ const PORT = 3000;
 export class CrudServer {
   constructor() {
     this.server = null;
+    this.httpServer = null;
   }
 
   async start() {
@@ -50,7 +51,7 @@ export class CrudServer {
   }
 
   startListening() {
-    this.server.listen(PORT, () => {
+    this.httpServer = this.server.listen(PORT, () => {
       console.log("Server started listening on port", PORT);
     });
   }

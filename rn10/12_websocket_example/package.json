@@ -1,0 +1,19 @@
+{
+  "name": "12_websocket_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
+    "esm": "^3.2.25",
+    "socket.io": "^2.3.0"
+  }
+}
