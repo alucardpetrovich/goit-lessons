@@ -1,3 +1,6 @@
+import path from "path";
+import dotenv from 'dotenv';
+dotenv.config({ path: path.join(__dirname, "../.env") });
 import express from "express";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
@@ -7,6 +10,7 @@ import { authRouter } from "./auth/auth.router";
 export class AuthServer {
   constructor() {
     this.app = null;
+    this.server = null;
   }
 
   async start() {
@@ -52,7 +56,7 @@ export class AuthServer {
 
   startListening() {
     const { PORT } = process.env;
-    this.app.listen(PORT, () => {
+    this.server = this.app.listen(PORT, () => {
       console.log("Server started listening on port", PORT);
     });
   }

@@ -5,7 +5,7 @@ import { UserModel } from "../users/users.model";
 import { Conflict, Unauthorized } from "../helpers/errorConstructors";
 import { createControllerProxy } from "../helpers/controllerProxy";
 
-class AuthController {
+export class AuthController {
   async signUp(req, res, next) {
     try {
       // 1. validate body +
