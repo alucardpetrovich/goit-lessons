@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd bc18/3_express_service && npm i && node express_service.js"
+    "start": "cd bc19/3_express_service && npm i && node weather.service.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "@hapi/joi": "^17.1.1",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.7.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "node-validator": "^0.1.27",
