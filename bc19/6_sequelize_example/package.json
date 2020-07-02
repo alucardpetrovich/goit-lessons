@@ -1,5 +1,5 @@
 {
-  "name": "5_mongodb_example",
+  "name": "6_sequelize_example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hapi/joi": "^17.1.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "joi-objectid": "^3.0.1",
-    "mongodb": "3.5.7",
-    "mongoose": "^5.9.20"
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.2.4"
   }
 }
