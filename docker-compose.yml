@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:10-alpine
+    container_name: go2play_db
+    restart: on-failure
+    init: true
+    ports:
+      - 5430:5432
+    environment:
+      POSTGRES_USER: bc19_example
+      POSTGRES_PASSWORD: plaintextpassword
+      POSTGRES_MULTIPLE_DATABASES: bc19_example
+      POSTGRES_HOST_AUTH_METHOD: trust
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "10"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U go2play"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
