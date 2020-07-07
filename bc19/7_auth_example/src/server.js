@@ -1,9 +1,9 @@
 require("./config");
 const express = require("express");
 const mongoose = require("mongoose");
-const { usersRouter } = require("./users/users.router");
+const { authRouter } = require("./auth/auth.router");
 
-module.exports = class UsersServer {
+module.exports = class AuthServer {
   constructor() {
     this.app = null;
   }
@@ -42,7 +42,7 @@ module.exports = class UsersServer {
   }
 
   initRoutes() {
-    this.app.use("/users", usersRouter);
+    this.app.use("/auth", authRouter);
   }
 
   initErrorHandling() {
