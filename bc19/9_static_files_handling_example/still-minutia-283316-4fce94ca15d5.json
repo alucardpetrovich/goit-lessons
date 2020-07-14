@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "still-minutia-283316",
+  "private_key_id": "4fce94ca15d5e07eae375843a46486f116bf4678",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDqT2o0oUWsdQ/j\nTdJ1KbZlfnNyh56MknCS1L9Y8m4JloVtGS2iGPOR5voyoIg/XX8CS5UAkM4/eOOh\noRoOOXT76GtOVAkemyMFKRcHJfEsNOgOvfuXW7jiTjwQNP39f/d/Ive6H7rSA4+O\nRQE3fPPqUfolE74d51MVO1RAJ4WuMcaC9Kef0GMu3OQ2foY7QQwjVMPyLMWzWaWw\nu3ILOO5cSnIU19ZibKZsXzsQ4BCFEFF0oGj+wh0VivvZOWz0YG1LAVerNTGA/L98\nIWHZAoWxgANTf59PdpKfHiYKOzUSh08lHws/MPBdC9UxEWRm9iPg/R1rtf6n11BJ\nbS0R5tZZAgMBAAECggEAPWTZmzi2nN1/cDuv7Wskk6tybIwEiyjDvnVoPdIn6vM5\nusBiKJsJFy3CWQmfKZtB8EQFosROhmsSmgMwZJHBiU/47ekvConzvyJpGkJi0wZ5\n14MILTynUQTW0BhShN3G59Utu+McfHLaZpjGHNfswXUBaj2mDwfRyTpmdPjmGiII\nVuI4FLemFfKD5r6pdormuaE5gSjmE+MkXxVLW4m59aGOZMZbh8vioUDURS3H6IrK\nnLybe+lnxZVDJacfWXZuVWNgtj2CxKLS7ufnFbPKzW8SqQ1jhbSI+YNs1DfvrmID\nY+kcG2g6a55PRkompVpE0uw9Z5scZilDM95vbzP4EQKBgQD5oSi2eK3SS5wAnRCg\n31Eg/j7Dxf0q93DA5q6vNme0weqMbV7vOoFsbnDsrj/CVvVWncGgSPXMTBsylno2\nbpzNjXlQbK6yBX64uaBMHGIqxR+l0BFT+vl6Y1NFQNFWb/hru4vV8RRUWUbSt8g4\nJY7NQ6CaZV+RSQGA6w8NCpO99wKBgQDwSiyPq6Qp/7Bfji4lcg4iDtgOVFeRt8bm\nTne0VA5EDFanXRmbRZ/QyL9LIpxLOTdglBgWSJlGfFEvINeWZuhrgWWW354oJjHi\nAC5YgC0jgclBqdVFJE4f1f6pz7kfPdCERU+0X4TwKF9pzpkQ1QnsGCCyMijPB1SR\nNxr9aus6LwKBgC2MQFd7EYxLi315Ky2PUchJW75xA86xM3ufG8SQkr+iml9hHW9d\nJ3xXcnddG/kj0MQrKMdMSL0sLdI/LrF74VSIOdh43C9TXVnrVNpOW4MeULX6jw7Z\nvmecc/cw6oFxEMznfY5d3K2/VHLiYcAM6k99xXImiReDUKjrOuXQRkDlAoGARwI0\nbvSTG9IypdpXartsz8XBNWLZSfecMJ0JpOGeIZ/fz6+kjI0jsEhSt3pv447x/Xlm\nMNedbAX628mBzDF3B6YChnZov4aiAR56k661KCQHfH8axkb3S1Mq4bXACCp1P1FY\nP35mw626nILwGthKCVoL93z5ME0DQbKeKDt7bgMCgYA+iCwMsS7JPVM9Wuq7p1ZU\ny9C2RRJREMRzlHopOTPI3dQEl9Tp79HrdnXYN+39tWGaHdq3YIBtNYeisSQjw4qp\nq1kcGdvETnoMhZ9XVh3WEq+wxXojL8aoC8LRSbzS6J2qrkfOvBD3OblKg+Eg1zK2\nsIIeTY1oAYSejxiQ7ku2tw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bc19-service-account@still-minutia-283316.iam.gserviceaccount.com",
+  "client_id": "110198021214283355852",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bc19-service-account%40still-minutia-283316.iam.gserviceaccount.com"
+}
