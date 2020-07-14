@@ -1,6 +1,8 @@
 require("./config");
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const { authRouter } = require("./auth/auth.router");
 
 module.exports = class AuthServer {
@@ -39,6 +41,8 @@ module.exports = class AuthServer {
 
   initMiddlewares() {
     this.app.use(express.json());
+    this.app.use(cookieParser());
+    this.app.use(cors({ origin: "http://localhost:3000" }));
   }
 
   initRoutes() {

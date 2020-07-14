@@ -58,5 +58,10 @@ exports.signIn = async (req, res, next) => {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
+  res.cookie("token", token, { httpOnly: true });
   return res.status(200).send({ token });
+};
+
+exports.getLoggedUser = (req, res) => {
+  return res.status(200).send(req.user);
 };

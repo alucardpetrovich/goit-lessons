@@ -3,6 +3,7 @@ const Joi = require("@hapi/joi");
 const { validate } = require("../helpers/validate");
 const authController = require("./auth.controller");
 const { createControllerProxy } = require("../helpers/controllers.proxy");
+const { authorize, authorizeWithCookies } = require('./auth.middleware');
 
 const authControllerProxy = createControllerProxy(authController);
 
@@ -20,5 +21,7 @@ const signInSchema = Joi.object({
   password: Joi.string().required(),
 });
 router.post("/sign-in", validate(signInSchema), authControllerProxy.signIn);
+
+router.get('/current', authorizeWithCookies, authControllerProxy.getLoggedUser);
 
 exports.authRouter = router;
