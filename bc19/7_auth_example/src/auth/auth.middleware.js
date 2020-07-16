@@ -8,7 +8,7 @@ exports.authorize = async (req, res, next) => {
   // 4. pass user object to req. +
   // 5. pass control to next middleware +
 
-  const authHeader = req.headers.authorization;
+  const authHeader = req.headers.authorization || "";
   const token = authHeader.replace("Bearer ", "");
 
   let payload;

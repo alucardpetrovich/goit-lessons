@@ -8,6 +8,7 @@ const { authRouter } = require("./auth/auth.router");
 module.exports = class AuthServer {
   constructor() {
     this.app = null;
+    this.server = null;
   }
 
   async start() {
@@ -59,7 +60,7 @@ module.exports = class AuthServer {
   startListening() {
     const { PORT } = process.env;
 
-    this.app.listen(PORT, () => {
+    this.server = this.app.listen(PORT, () => {
       console.log("Server started listening on port", PORT);
     });
   }
