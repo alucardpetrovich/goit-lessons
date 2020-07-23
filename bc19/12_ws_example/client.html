@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script>
+      const socket = io("http://localhost:3000", {
+        path: "/test",
+      });
+
+      socket.on("connect", () => {
+        console.log("connected to server");
+        socket.emit("joinChat", { chatId: "chat_id" });
+      });
+
+      socket.on("joinChatResponse", (data) => {
+        console.log("recieved response from server", data);
+      });
+    </script>
+  </body>
+</html>
