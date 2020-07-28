@@ -10,6 +10,13 @@
       "name": "BC19 VSCode debug example",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\bc19\\5_mongodb_example\\src\\start.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "BC19 ws example",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/bc19/12_ws_example/chat_example.js"
     }
   ]
 }

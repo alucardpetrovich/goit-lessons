@@ -40,6 +40,6 @@ const signInSchema = Joi.object({
 });
 router.post("/sign-in", validate(signInSchema), authControllerProxy.signIn);
 
-router.get("/current", authorizeWithCookies, authControllerProxy.getLoggedUser);
+router.get("/current", authorizeWithCookies , authControllerProxy.getLoggedUser);
 
 exports.authRouter = router;
