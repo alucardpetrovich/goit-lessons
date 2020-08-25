@@ -1,0 +1,1 @@
+global.smth = "asdfasdf";
