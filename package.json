@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd bc19/3_express_service && npm i && node weather.service.js"
+    "start": "cd bc20-21/4_web_service_example && npm i && node server.js"
   },
   "repository": {
     "type": "git",
