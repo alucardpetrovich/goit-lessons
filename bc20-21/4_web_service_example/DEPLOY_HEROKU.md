@@ -10,4 +10,6 @@
 
 ### 5. Get listening port from PORT env var
 
+### 6. Set up env vars with config:set
+
 ### 6. write start command in package.json
