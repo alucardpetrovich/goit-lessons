@@ -17,6 +17,11 @@ const forecastScheme = Joi.object({
 
 // console.log("process.env.DARKSKY_API_TOKEN", process.env.DARKSKY_API_TOKEN);
 
+app.get("/hello", (req, res, next) => {
+  console.log(req.query);
+  return res.status(200).send();
+});
+
 app.get("/forecast", validate(forecastScheme), async (req, res, next) => {
   const { lat, ln } = req.query;
 
