@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "bc20-21 example debug",
+      "program": "${workspaceFolder}/bc20-21/4_web_service_example/server.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "BC19 VSCode debug example",
