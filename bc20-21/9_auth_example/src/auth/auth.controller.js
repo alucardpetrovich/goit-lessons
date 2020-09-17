@@ -59,6 +59,7 @@ exports.signIn = async (req, res, next) => {
   const token = jwt.sign({ uid: user._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
+  res.cookie("token", token, { httpOnly: true });
 
   res.status(201).send({
     user: {
@@ -66,6 +67,29 @@ exports.signIn = async (req, res, next) => {
       username: user.username,
       email: user.email,
     },
-    token,
   });
+};
+
+exports.authorize = async (req, res, next) => {
+  // 1. get token +
+  // 2. verify token +
+  // 3. get user by token +
+  // 4. write user to req object +
+  // 5. pass req execution to next middleware +
+  const { token } = req.cookies;
+
+  let payload;
+  try {
+    payload = jwt.verify(token, process.env.JWT_SECRET);
+  } catch (err) {
+    return res.status(401).send("Unauthorized");
+  }
+
+  const user = await UserModel.findById(payload.uid);
+  if (!user) {
+    return res.status(401).send("Unauthorized");
+  }
+
+  req.user = user;
+  next();
 };

@@ -3,7 +3,9 @@ require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 const { authRouter } = require("./auth/auth.router");
+const { usersRouter } = require("./users/user.router");
 
 module.exports = class AuthServer {
   async start() {
@@ -30,10 +32,12 @@ module.exports = class AuthServer {
 
   initMiddlewares() {
     this.app.use(express.json());
+    this.app.use(cookieParser());
   }
 
   initRoutes() {
     this.app.use("/auth", authRouter);
+    this.app.use("/users", usersRouter);
   }
 
   initErrorHandling() {
