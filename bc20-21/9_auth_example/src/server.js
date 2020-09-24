@@ -17,6 +17,16 @@ module.exports = class AuthServer {
     this.startListening();
   }
 
+  async startForTest() {
+    this.initServer();
+    await this.initDbConnection();
+    this.initMiddlewares();
+    this.initRoutes();
+    this.initErrorHandling();
+
+    return this;
+  }
+
   initServer() {
     this.app = express();
   }
