@@ -1,0 +1,17 @@
+{
+  "name": "1_nodejs_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "yargs": "^16.0.3"
+  },
+  "devDependencies": {}
+}
