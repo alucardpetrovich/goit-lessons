@@ -1,0 +1,18 @@
+{
+  "name": "2_server_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express_example.js",
+  "scripts": {
+    "dev": "nodemon --inspect express_example.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
