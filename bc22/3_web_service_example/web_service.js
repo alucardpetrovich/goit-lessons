@@ -2,10 +2,33 @@ const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 const express = require("express");
+const cors = require("cors");
 const Joi = require("joi");
 const { default: axios } = require("axios");
 
 const server = express();
+
+// server.use((req, res, next) => {
+//   res.set("Access-Control-Allow-Origin", process.env.ORIGIN);
+// });
+
+// server.options((req, res, next) => {
+//   res.set(
+//     "Access-Control-Allow-Methods",
+//     req.headers["Access-Control-Request-Method"]
+//   );
+//   res.set(
+//     "Access-Control-Allow-Headers",
+//     req.headers["Access-Control-Request-Headers"]
+//   );
+
+//   return res.status(200).send();
+// });
+
+// DO NOT USE LIKE THAT
+// server.use(cors());
+
+server.use(cors({ origin: process.env.ORIGIN }));
 
 server.get("/forecast", validateForecast, async (req, res, next) => {
   const { lon, lat } = req.query;
