@@ -2,8 +2,13 @@ const express = require("express");
 
 const server = express();
 
+server.use(express.static("static"));
+server.use(express.json());
+server.use(express.urlencoded());
+
 server.use("/", (req, res, next) => {
   console.log("world");
+  console.log('req.body', req.body);
   next();
 });
 
