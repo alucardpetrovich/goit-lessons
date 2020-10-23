@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "bc1on example",
+      "program": "${workspaceFolder}/bc1on/2_server_basics/express_example.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
       "name": "bc20-21 example debug",
       "program": "${workspaceFolder}/bc20-21/4_web_service_example/server.js",
       "request": "launch",
