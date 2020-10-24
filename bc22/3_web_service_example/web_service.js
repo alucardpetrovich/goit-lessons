@@ -5,6 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const Joi = require("joi");
 const { default: axios } = require("axios");
+const { request } = require("express");
 
 const server = express();
 
@@ -30,14 +31,7 @@ const server = express();
 
 server.use(cors({ origin: process.env.ORIGIN }));
 
-server.get("/forecast", validateForecast, async (req, res, next) => {
-  const { lon, lat } = req.query;
-  const response = await axios.get(
-    `https://api.darksky.net/forecast/${process.env.DARKSKY_API_TOKEN}/${lat},${lon}?exclude=minutely,hourly,daily,alerts,flags`
-  );
-
-  res.status(200).send(response.data);
-});
+server.get("/forecast", validateForecast, getForecast);
 
 function validateForecast(req, res, next) {
   const forecastSchema = Joi.object({
@@ -53,6 +47,19 @@ function validateForecast(req, res, next) {
   next();
 }
 
-server.listen(process.env.PORT, () => {
-  console.log("Server started on port", process.env.PORT);
-});
+async function getForecast(req, res, next) {
+  const { lon, lat } = req.query;
+  const response = await axios.get(
+    `https://api.darksky.net/forecast/${process.env.DARKSKY_API_TOKEN}/${lat},${lon}?exclude=minutely,hourly,daily,alerts,flags`
+  );
+
+  res.status(200).send(response.data);
+}
+
+if (require.main === module) {
+  server.listen(process.env.PORT, () => {
+    console.log("Server started on port", process.env.PORT);
+  });
+} else {
+  exports.getForecast = getForecast;
+}

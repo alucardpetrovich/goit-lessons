@@ -14,6 +14,15 @@
       "type": "pwa-node"
     },
     {
+      "name": "bc22 multer example",
+      "program": "${workspaceFolder}/bc22/8_statics_example/multer_example.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
       "name": "bc20-21 example debug",
       "program": "${workspaceFolder}/bc20-21/4_web_service_example/server.js",
       "request": "launch",
