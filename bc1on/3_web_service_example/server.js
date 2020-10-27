@@ -3,11 +3,34 @@ require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 const express = require("express");
 const Joi = require("joi");
+const cors = require("cors");
+const morgan = require("morgan");
 // import axios from 'axios';
 // module.exports.default === export default
 const { default: axios } = require("axios");
 
 const server = express();
+
+server.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
+server.use(morgan("tiny"));
+
+// server.use((req, res, next) => {
+//   res.set("Access-Control-Allow-Origin", process.env.ALLOWED_ORIGIN);
+//   next();
+// });
+
+// server.options("/*", (req, res, next) => {
+//   res.set(
+//     "Access-Control-Allow-Methods",
+//     req.get("Access-Control-Request-Method")
+//   );
+//   res.set(
+//     "Access-Control-Allow-Headers",
+//     req.set("Access-Control-Request-Headers")
+//   );
+
+//   return res.status(200).send();
+// });
 
 server.get("/forecast", validateForecastParams, getForecast);
 
