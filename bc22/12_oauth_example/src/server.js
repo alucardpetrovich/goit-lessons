@@ -4,8 +4,13 @@ require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const passport = require("passport");
 const { authRouter } = require("./auth/auth.router");
 const { usersRouter } = require("./users/users.router");
+const {
+  initGoogleOauthStrategy,
+} = require("./auth/strategies/google.strategy");
+const { UserModel } = require("./users/user.model");
 
 module.exports = class AuthServer {
   constructor() {
@@ -42,6 +47,20 @@ module.exports = class AuthServer {
   async initMiddlewares() {
     this.app.use(express.json());
     this.app.use(cookieParser());
+    passport.serializeUser((user, done) => {
+      done(null, user._id);
+    });
+    passport.deserializeUser(async (id, done) => {
+      const user = await UserModel.findById(id);
+      if (!user) {
+        done(new Error("User not authorized"));
+      }
+
+      done(null, user);
+    });
+    this.app.use(passport.initialize());
+    this.app.use(passport.session());
+    initGoogleOauthStrategy();
   }
 
   initRoutes() {

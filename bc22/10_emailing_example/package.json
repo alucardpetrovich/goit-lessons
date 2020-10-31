@@ -1,0 +1,17 @@
+{
+  "name": "10_emailing_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.3.0",
+    "dotenv": "^8.2.0",
+    "nodemailer": "^6.4.14"
+  }
+}

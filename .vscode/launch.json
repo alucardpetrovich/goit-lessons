@@ -4,9 +4,37 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
+  {
+    "name": "bc22 oAuth",
+    "program": "${workspaceFolder}/bc22/12_oauth_example/src/start.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
+  {
+    "name": "Bc22 Static server debugger",
+    "program": "${workspaceFolder}/bc22/8_statics_example/multer_example.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
     {
       "name": "bc1on example",
       "program": "${workspaceFolder}/bc1on/3_web_service_example/server.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
+    {
+      "name": "bc1on crud example",
+      "program": "${workspaceFolder}/bc1on/4_crud_example/src/start.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
