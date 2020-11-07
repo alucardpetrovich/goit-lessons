@@ -1,0 +1,17 @@
+{
+  "name": "6_relational_db_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.4.2",
+    "sequelize": "^6.3.5"
+  }
+}
