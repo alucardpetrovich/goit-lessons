@@ -34,7 +34,7 @@
     },
     {
       "name": "bc1on crud example",
-      "program": "${workspaceFolder}/bc1on/4_crud_example/src/start.js",
+      "program": "${workspaceFolder}/bc1on/7_auth_example/src/start.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"

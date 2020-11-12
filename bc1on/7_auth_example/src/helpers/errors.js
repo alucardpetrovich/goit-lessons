@@ -18,3 +18,10 @@ exports.Forbidden = class extends Error {
     this.status = 403;
   }
 };
+
+exports.Unauthorized = class extends Error {
+  constructor(message) {
+    super(message);
+    this.status = 401;
+  }
+};

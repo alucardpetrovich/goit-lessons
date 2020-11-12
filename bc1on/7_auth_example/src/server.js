@@ -4,6 +4,7 @@ require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const express = require("express");
 const mongoose = require("mongoose");
 const { authRouter } = require("./auth/auth.router");
+const { usersRouter } = require("./users/users.router");
 
 exports.AuthServer = class {
   constructor() {
@@ -42,6 +43,7 @@ exports.AuthServer = class {
 
   initRoutes() {
     this.app.use("/auth", authRouter);
+    this.app.use("/users", usersRouter);
   }
 
   initErrorHandling() {
