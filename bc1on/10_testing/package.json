@@ -1,0 +1,22 @@
+{
+  "name": "10_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.test.js --timeout 5000 --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.2.1",
+    "supertest": "^6.0.1"
+  },
+  "dependencies": {
+    "joi": "^17.3.0"
+  }
+}
