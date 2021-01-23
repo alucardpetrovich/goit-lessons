@@ -10,6 +10,11 @@ const __dirname = path.dirname(pathname);
 dotenv.config({ path: path.join(__dirname, ".env") });
 const server = express();
 
+server.use((req, res, next) => {
+  res.set("Access-Control-Allow-Origin", "http://localhost:3000");
+  next();
+});
+
 server.get("/weather", validateGetWeather, async (req, res) => {
   const { ln, lat } = req.query;
   const forecastResponse = await axios.get(

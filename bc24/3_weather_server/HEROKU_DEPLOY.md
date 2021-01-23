@@ -10,4 +10,6 @@
 
 ### 5. Write in package.json start script
 
+### 6. Add env variables to heroku dyno
+
 ### 7. Push code to heroku repository (`git push heroku master`)
