@@ -2,6 +2,7 @@ import express from "express";
 import { getPaths } from "./helpers/utils.js";
 import dotenv from "dotenv";
 import path from "path";
+import mongoose from "mongoose";
 import { usersController } from "./users/users.controller.js";
 
 export class UsersServer {
@@ -9,9 +10,10 @@ export class UsersServer {
     this.server = null;
   }
 
-  start() {
+  async start() {
     this.initServer();
     this.initConfig();
+    await this.initDatabase();
     this.initMiddlewares();
     this.initRoutes();
     this.initErrorHandling();
@@ -25,6 +27,15 @@ export class UsersServer {
   initConfig() {
     const { __dirname } = getPaths(import.meta.url);
     dotenv.config({ path: path.join(__dirname, "../.env") });
+  }
+
+  async initDatabase() {
+    await mongoose.connect(process.env.MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    });
   }
 
   initMiddlewares() {
