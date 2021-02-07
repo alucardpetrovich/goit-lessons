@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import path from "path";
 import mongoose from "mongoose";
 import { authController } from "./auth/auth.controller.js";
+import { usersController } from "./users/users.controller.js";
 import cookieParser from "cookie-parser";
 
 export class AuthServer {
@@ -46,6 +47,7 @@ export class AuthServer {
 
   initRoutes() {
     this.server.use("/auth", authController);
+    this.server.use("/users", usersController);
   }
 
   initErrorHandling() {
