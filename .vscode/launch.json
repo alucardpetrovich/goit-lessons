@@ -4,7 +4,15 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
+  {
+    "name": "bc24 example",
+    "program": "${workspaceFolder}/bc24/7_auth_example/src/start.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
   {
     "name": "bc22 oAuth",
     "program": "${workspaceFolder}/bc22/12_oauth_example/src/start.js",
