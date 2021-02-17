@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
   {
+    "name": "form-data bc24 example",
+    "program": "${workspaceFolder}/bc24/8_form_data_basics/image_compression_server.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
+  {
     "name": "bc24 example",
     "program": "${workspaceFolder}/bc24/7_auth_example/src/start.js",
     "request": "launch",

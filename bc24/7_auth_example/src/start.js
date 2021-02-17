@@ -1,3 +1,4 @@
-import { AuthServer } from "./server.js";
+require = require("esm")(module);
+const { AuthServer } = require("./server.js");
 
 new AuthServer().start();
