@@ -1,7 +1,8 @@
+const { expect } = require("chai");
 const { sum } = require("./sum.js");
 
 describe("First Test Suite", () => {
-  beforeAll(() => {
+  before(() => {
     console.log("Before All");
   });
 
@@ -13,19 +14,19 @@ describe("First Test Suite", () => {
     console.log("After Each");
   });
 
-  afterAll(() => {
+  after(() => {
     console.log("After All");
   });
 
   it("Should add two integers", () => {
     const actualResult = sum(4, 5);
     console.log("first test");
-    expect(actualResult).toEqual(9);
+    expect(actualResult).equal(9);
   });
 
   it("Should add two floats", () => {
     console.log("second test");
     const actualResult = sum(0.1, 0.2);
-    expect(actualResult).toEqual(0.3);
+    expect(actualResult).equal(0.3);
   });
 });
