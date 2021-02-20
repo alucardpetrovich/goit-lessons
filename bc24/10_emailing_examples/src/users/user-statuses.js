@@ -1,0 +1,4 @@
+export const USER_STATUSES = {
+  CREATED: "CREATED",
+  VERIFIED: "VERIFIED",
+};
