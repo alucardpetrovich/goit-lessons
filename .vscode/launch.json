@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
   {
+    "name": "bc25 example",
+    "program": "${workspaceFolder}/bc25/2_express_basics/express_example.js",
+    "request": "launch",
+    "skipFiles": [
+      "<node_internals>/**"
+    ],
+    "type": "pwa-node"
+  },
+  {
     "name": "form-data bc24 example",
     "program": "${workspaceFolder}/bc24/8_form_data_basics/image_compression_server.js",
     "request": "launch",
