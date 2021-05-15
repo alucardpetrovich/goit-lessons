@@ -1,0 +1,21 @@
+{
+  "name": "7_auth_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bcrypt_example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9"
+  }
+}
