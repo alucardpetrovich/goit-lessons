@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const mongoose = require("mongoose");
 const { authController } = require("./auth/auth.controller");
+const { usersController } = require("./users/users.controller");
 
 exports.AuthServer = class {
   async start() {
@@ -44,6 +45,7 @@ exports.AuthServer = class {
 
   initRoutes() {
     this.app.use("/api/auth", authController);
+    this.app.use("/api/users", usersController);
   }
 
   initErrorHandling() {
