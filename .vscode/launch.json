@@ -6,7 +6,7 @@
   "configurations": [
   {
     "name": "bc25 example",
-    "program": "${workspaceFolder}/bc25/2_express_basics/express_example.js",
+    "program": "${workspaceFolder}/bc25/10_files_server/server.js",
     "request": "launch",
     "skipFiles": [
       "<node_internals>/**"
