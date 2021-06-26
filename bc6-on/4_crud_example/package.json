@@ -1,5 +1,5 @@
 {
-  "name": "3_web_service_example",
+  "name": "4_crud_example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "joi": "^17.4.0"
+    "http-errors": "^1.8.0",
+    "joi": "^17.4.0",
+    "uuid": "^8.3.2"
   }
 }

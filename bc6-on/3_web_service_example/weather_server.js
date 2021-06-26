@@ -3,10 +3,25 @@ const Joi = require('joi');
 const { default: axios } = require('axios');
 const dotenv = require('dotenv');
 const path = require('path');
+const cors = require('cors');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
 
 const app = express();
+
+// app.use((req, res, next) => {
+//   res.set('Access-Control-Allow-Origin', process.env.ALLOWED_ORIGIN);
+//   next();
+// });
+
+// app.options('/*', (req, res, next) => {
+//   res.set('Access-Control-Allow-Methods', req.get('Access-Control-Request-Method'));
+//   res.set('Access-Control-Allow-Headers', req.get('Access-Control-Request-Headers'));
+
+//   return res.status(200).send();
+// });
+
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
 
 // Endpoint - METHOD + URL
 app.get('/weather', validateGetWeather, async (req, res, next) => {

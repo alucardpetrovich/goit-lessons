@@ -8,8 +8,10 @@
 
 ### 4. Create heroku app (`heroku create` command)
 
-### 5. Create start script in package.json, which will start the server
+### 5. Use provided by heroku port from process.env.PORT
 
-### 5. Push code to Heroku
+### 6. Create start script in package.json, which will start the server
 
-### 6. Set env vars (`heroku config:set` command)
+### 7. Push code to Heroku
+
+### 8. Set env vars (`heroku config:set` command)
