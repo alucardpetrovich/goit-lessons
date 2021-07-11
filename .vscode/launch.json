@@ -6,7 +6,7 @@
   "configurations": [
   {
     "name": "bc6-on example",
-    "program": "${workspaceFolder}/bc6-on/2_express_basics/express_example.js",
+    "program": "${workspaceFolder}/bc6-on/8_auth_example/src/start.js",
     "request": "launch",
     "skipFiles": [
       "<node_internals>/**"
