@@ -2,8 +2,10 @@ const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
 const mongoose = require("mongoose");
+const schedule = require("node-schedule");
 const { authController } = require("./auth/auth.controller");
 const { usersController } = require("./users/users.controller");
+const { authService } = require("./auth/auth.service");
 
 exports.CrudServer = class {
   constructor() {
@@ -16,17 +18,9 @@ exports.CrudServer = class {
     await this.initDatabase();
     this.initMiddlewares();
     this.initRoutes();
+    this.initCrons();
     this.initErrorHandling();
     this.startListening();
-  }
-
-  async startForTest() {
-    this.initServer();
-    this.initConfig();
-    await this.initDatabase();
-    this.initMiddlewares();
-    this.initRoutes();
-    this.initErrorHandling();
   }
 
   initServer() {
@@ -60,6 +54,14 @@ exports.CrudServer = class {
   initRoutes() {
     this.server.use("/auth", authController);
     this.server.use("/users", usersController);
+  }
+
+  initCrons() {
+    schedule.scheduleJob(
+      "RemoveUsedTokens",
+      "0 * * * *",
+      authService.removeUsedTokens
+    );
   }
 
   initErrorHandling() {
