@@ -6,7 +6,7 @@
   "configurations": [
   {
     "name": "bc6-on example",
-    "program": "${workspaceFolder}/bc6-on/9_file-server-example/multer_example.js",
+    "program": "${workspaceFolder}/bc6-on/12_emailing_example/src/start.js",
     "request": "launch",
     "skipFiles": [
       "<node_internals>/**"
