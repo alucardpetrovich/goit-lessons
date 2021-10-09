@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd bc6-on/3_web_service_example && npm i && node weather_server.js"
+    "start": "cd bc9-on/3_weather_server && npm i && node weather_server.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   "homepage": "https://github.com/alucardpetrovich/goit-lessons#readme",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
-    "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.7.1",
     "cors": "^2.8.5",
