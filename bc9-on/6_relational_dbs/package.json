@@ -1,0 +1,23 @@
+{
+  "name": "6_relational_dbs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "ts-node typeorm_example.ts",
+    "build": "tsc",
+    "start": "node dist/typeorm_example.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.1",
+    "typeorm": "^0.2.38"
+  },
+  "devDependencies": {
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}
