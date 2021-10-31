@@ -15,7 +15,8 @@ exports.AuthServer = class {
     this.initMiddlewares();
     this.initRoutes();
     this.initErrorHandling();
-    this.startListening();
+
+    return this;
   }
 
   initServer() {

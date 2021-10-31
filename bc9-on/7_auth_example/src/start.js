@@ -1,3 +1,8 @@
 const { AuthServer } = require("./server");
 
-new AuthServer().start();
+async function main() {
+  const server = new AuthServer();
+  await server.start();
+  server.startListening();
+}
+main();

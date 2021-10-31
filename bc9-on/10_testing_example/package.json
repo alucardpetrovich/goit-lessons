@@ -1,0 +1,16 @@
+{
+  "name": "10_testing_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  }
+}
