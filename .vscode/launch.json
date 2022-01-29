@@ -114,6 +114,15 @@
       "name": "BC19 ws example",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/bc19/12_ws_example/chat_example.js"
-    }
+    },
+    {
+      "name": "bc12on example",
+      "program": "${workspaceFolder}/bc12-on/2_server_example/express.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
   ]
 }
