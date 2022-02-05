@@ -11,3 +11,7 @@
 ### 6. Set port to listen from process.env.PORT
 
 ### 7. Commit all changes
+
+### 8. Run `git push heroku master`
+
+### 9. Set env vars via (heroku config:set)
