@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "bc9on example",
       "program": "${workspaceFolder}/bc9-on/9_static_files/multer_example.js",
@@ -117,7 +118,7 @@
     },
     {
       "name": "bc12on example",
-      "program": "${workspaceFolder}/bc12-on/2_server_example/express.js",
+      "program": "${workspaceFolder}/bc12-on/6_mongoose_rest_api/src/start.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
