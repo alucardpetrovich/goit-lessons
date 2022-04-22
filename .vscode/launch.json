@@ -124,5 +124,14 @@
       ],
       "type": "pwa-node"
     },
+    {
+      "name": "bc13on example",
+      "program": "${workspaceFolder}/bc13-on/2_web_services_basics/express_example.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
+    },
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "name": "2_web_services_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express_example.js",
+  "scripts": {
+    "start:dev": "nodemon express_example.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
