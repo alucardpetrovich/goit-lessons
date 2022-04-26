@@ -126,7 +126,7 @@
     },
     {
       "name": "bc13on example",
-      "program": "${workspaceFolder}/bc13-on/2_web_services_basics/express_example.js",
+      "program": "${workspaceFolder}/bc13-on/3_weather_server/weather_server.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
