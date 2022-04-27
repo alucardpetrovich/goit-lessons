@@ -3,13 +3,16 @@ const dotenv = require("dotenv");
 const path = require("path");
 const Joi = require("joi");
 const { default: axios } = require("axios");
+const cors = require("cors");
 const { catchErrors } = require("./catch-errors");
 // import axios from axios;
 
 dotenv.config({ path: path.join(__dirname, ".env") });
-const { PORT, OPEN_WEATHER_MAP_API_KEY } = process.env;
+const { PORT, OPEN_WEATHER_MAP_API_KEY, ALLOWED_ORIGIN } = process.env;
 
 const server = express();
+
+server.use(cors({ origin: ALLOWED_ORIGIN }));
 
 // Endpoint -> HTTP Method + path (/users/1)
 server.get(

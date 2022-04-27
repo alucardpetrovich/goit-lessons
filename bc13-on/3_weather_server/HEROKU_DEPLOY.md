@@ -12,4 +12,4 @@
 
 ### 7. Set env vars (`heroku config:set` or web UI)
 
-### 8. Run ``
+### 8. Commit changes & run `git push heroku master`
