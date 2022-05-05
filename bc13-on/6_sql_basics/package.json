@@ -1,0 +1,22 @@
+{
+  "name": "6_sql_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dc:up": "docker-compose -f docker-compose.local.yml up -d",
+    "migrations:generate": "sequelize-cli model:generate --models-path models --migrations-path migrations",
+    "migrations:up": "sequelize-cli db:migrate --models-path models --migrations-path migrations"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
+}
