@@ -126,8 +126,9 @@
     },
     {
       "name": "bc13on example",
-      "program": "${workspaceFolder}/bc13-on/5_mongodb_basics/src/start.js",
+      "program": "${workspaceFolder}/bc13-on/8_files_example/files_server.js",
       "request": "launch",
+      "cwd": "${workspaceFolder}/bc13-on/8_files_example",
       "skipFiles": [
         "<node_internals>/**"
       ],
