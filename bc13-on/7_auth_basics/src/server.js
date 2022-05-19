@@ -3,26 +3,39 @@ const dotenv = require("dotenv");
 const path = require("path");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const http = require("http");
 const { getConfig } = require("./config");
 const { authRouter } = require("./resources/auth/auth.controller");
 const { usersRouter } = require("./resources/users/users.controller");
 
-class UsersServer {
+class AuthServer {
   #app;
   #config;
+  #server;
 
-  async start() {
+  async start(isTest = false) {
     this.#initServer();
     this.#initConfig();
     await this.#initDatabase();
     this.#initMiddlewares();
     this.#initRoutes();
     this.#initErrorHandling();
-    this.#startListening();
+    if (!isTest) {
+      this.#startListening();
+    }
+  }
+
+  close() {
+    this.#server.close();
+  }
+
+  getApp() {
+    return this.#app;
   }
 
   #initServer() {
     this.#app = express();
+    this.#server = http.createServer(this.#app);
   }
 
   #initConfig() {
@@ -70,4 +83,4 @@ class UsersServer {
   }
 }
 
-module.exports.UsersServer = UsersServer;
+module.exports.AuthServer = AuthServer;
