@@ -5,6 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "bc15-on example",
+      "program": "${workspaceFolder}/bc15-on/2_web_server_basics/express.js",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
       "name": "bc9on example",
       "program": "${workspaceFolder}/bc9-on/9_static_files/multer_example.js",
       "request": "launch",
