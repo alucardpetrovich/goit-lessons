@@ -3,10 +3,31 @@ const Joi = require("joi");
 const dotenv = require("dotenv");
 const path = require("path");
 const { default: axios } = require("axios");
+const cors = require("cors");
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 const app = express();
+
+app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
+
+// app.use((req, res, next) => {
+//   res.set("Access-Control-Allow-Origin", process.env.ALLOWED_ORIGIN);
+//   next();
+// });
+
+// app.options("*", (req, res, next) => {
+//   res.set(
+//     "Access-Control-Allow-Methods",
+//     req.headers["access-control-allow-methods"]
+//   );
+//   res.set(
+//     "Access-Control-Allow-Headers",
+//     req.headers["access-control-allow-headers"]
+//   );
+
+//   res.status(200).send();
+// });
 
 app.get("/forecast", validateForecast, async (req, res, next) => {
   // 1. lon, lat - validate

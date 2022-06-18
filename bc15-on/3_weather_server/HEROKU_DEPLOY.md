@@ -12,4 +12,4 @@
 
 ### 7. Setup env vars
 
-### 8. 
+### 8. Commit changes & run `git push heroku`
