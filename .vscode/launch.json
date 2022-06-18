@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "bc15-on example",
-      "program": "${workspaceFolder}/bc15-on/2_web_server_basics/express.js",
+      "program": "${workspaceFolder}/bc15-on/3_weather_server/weather_server.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"

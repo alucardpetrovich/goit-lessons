@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd bc13-on/3_weather_server && npm i && node weather_server.js"
+    "start": "cd bc15-on/3_weather_server && npm i && node weather_server.js"
   },
   "repository": {
     "type": "git",
