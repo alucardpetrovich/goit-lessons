@@ -1,0 +1,22 @@
+{
+  "name": "6_sql_basics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrations:up": "sequelize-cli db:migrate --url $DB_URL",
+    "migrations:down": "sequelize-cli db:migrate:undo --url $DB_URL"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
+}
