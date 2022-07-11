@@ -5,12 +5,23 @@ const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const http = require("http");
 const { getConfig } = require("./config");
 const { authController } = require("./resources/auth/auth.controller");
 
-class UsersServer {
+class AuthServer {
   #app;
   #config;
+  #server;
+
+  async startForTests() {
+    this.#initServer();
+    this.#initConfig();
+    await this.#initDatabase();
+    this.#initMiddlewares();
+    this.#initRoutes();
+    this.#initErrorHandling();
+  }
 
   async start() {
     this.#initServer();
@@ -22,8 +33,17 @@ class UsersServer {
     this.#startListening();
   }
 
+  getApp() {
+    return this.#app;
+  }
+
+  getServer() {
+    return this.#server;
+  }
+
   #initServer() {
     this.#app = express();
+    this.#server = http.createServer(this.#app);
   }
 
   #initConfig() {
@@ -57,10 +77,10 @@ class UsersServer {
   }
 
   #startListening() {
-    this.#app.listen(this.#config.port, () => {
+    this.#server.listen(this.#config.port, () => {
       console.log("Server started listening on port", this.#config.port);
     });
   }
 }
 
-exports.UsersServer = UsersServer;
+exports.AuthServer = AuthServer;

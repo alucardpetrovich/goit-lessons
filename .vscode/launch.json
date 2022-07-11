@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "bc15-on example",
-      "program": "${workspaceFolder}/bc15-on/4_rest_basics/src/start.js",
+      "program": "${workspaceFolder}/bc15-on/8_files_basics/multer_example.js",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
