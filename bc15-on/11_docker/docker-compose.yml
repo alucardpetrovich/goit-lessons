@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres:13.4-alpine
+    container_name: bc15_on_example
+    restart: on-failure
+    init: true
+    expose:
+      - "5432"
+    volumes:
+      - ./scripts/pg_init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: bc15_on
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_MULTIPLE_DATABASES: bc15_on
+      POSTGRES_HOST_AUTH_METHOD: password
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "10"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bc15_on"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - backend
+  app:
+    image: bc15-on:7
+    ports:
+      - "3333:3000"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
