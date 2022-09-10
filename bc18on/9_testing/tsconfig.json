@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "../",
     "strict": true,
     "module": "commonjs",
     "declaration": true,

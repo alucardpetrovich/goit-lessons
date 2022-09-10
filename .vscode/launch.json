@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
@@ -15,7 +16,8 @@
     },
     {
       "name": "bc18-on example",
-      "program": "${workspaceFolder}/bc18on/4_server_example/weather_server.js",
+      "program": "${workspaceFolder}/bc18on/8_files_example/multer_example.js",
+      "cwd": "${workspaceFolder}/bc18on/8_files_example",
       "request": "launch",
       "skipFiles": [
         "<node_internals>/**"

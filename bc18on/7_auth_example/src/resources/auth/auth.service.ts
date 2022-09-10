@@ -1,6 +1,6 @@
-import * as bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 import { Conflict, NotFound, Forbidden } from "http-errors";
-import * as jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { User, UserModel } from "../users/user.model";
 import { SignInDto, SignUpDto } from "./auth.schemas";
 import { conf } from "../../config";

@@ -1,6 +1,6 @@
-import * as convict from "convict";
-import * as dotenv from "dotenv";
-import * as path from "path";
+import convict from "convict";
+import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config({ path: path.join(__dirname, "../.env") });
 
@@ -25,18 +25,18 @@ const config = convict({
   },
   jwt: {
     secret: {
-      doc: 'JWT secret, used for token verification and generation',
+      doc: "JWT secret, used for token verification and generation",
       format: String,
-      default: '',
+      default: "",
       env: "JWT_SECRET",
     },
     expiresIn: {
       doc: "JWT token expiration time",
       format: String,
-      default: '2d',
-      env: "JWT_EXPIRES_IN"
-    }
-  }
+      default: "2d",
+      env: "JWT_EXPIRES_IN",
+    },
+  },
 });
 
 export const conf = config.validate({ allowed: "strict" }).getProperties();

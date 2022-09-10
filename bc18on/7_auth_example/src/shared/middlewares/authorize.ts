@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import * as jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { Unauthorized } from "http-errors";
 import { conf } from "../../config";
 

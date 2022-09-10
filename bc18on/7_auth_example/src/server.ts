@@ -1,5 +1,5 @@
-import * as express from "express";
-import * as mongoose from "mongoose";
+import express from "express";
+import mongoose from "mongoose";
 import { HttpError } from "http-errors";
 import { conf } from "./config";
 import { authController } from "./resources/auth/auth.controller";
@@ -14,6 +14,13 @@ export class AuthServer {
     this.initRoutes();
     this.initErrorHandling();
     this.startListening();
+  }
+
+  async startForTests() {
+    await this.initDatabase();
+    this.initMiddlewares();
+    this.initRoutes();
+    this.initErrorHandling();
   }
 
   private async initDatabase() {
