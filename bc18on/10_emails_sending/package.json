@@ -1,0 +1,25 @@
+{
+  "name": "10_emails_sending",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "ts-node sendgrid_example.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "dotenv": "^16.0.2",
+    "nodemailer": "^6.7.8",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "@types/nodemailer": "^6.4.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
+}
