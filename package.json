@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd bc26-on/4_weather_server && npm i && npm i typescript -g && npm run build && node dist/server.js"
+    "build": "cd bc26-on/4_weather_server && npm i && npm run build",
+    "start": "cd bc26-on/4_weather_server && node dist/server.js"
   },
   "repository": {
     "type": "git",
