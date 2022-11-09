@@ -176,10 +176,10 @@
       "type": "node",
       "request": "launch",
       "name": "BC26-ON typescript",
-      "program": "${workspaceFolder}/bc26-on/4_weather_server/src/server.ts",
-      "preLaunchTask": "npm: build - bc26-on/4_weather_server",
-      "cwd": "${workspaceFolder}/bc26-on/4_weather_server",
-      "outFiles": ["${workspaceFolder}/bc26-on/4_weather_server/dist/**/*.js"]
+      "program": "${workspaceFolder}/bc26-on/5_rest_example/src/start.ts",
+      "preLaunchTask": "npm: build - bc26-on/5_rest_example",
+      "cwd": "${workspaceFolder}/bc26-on/5_rest_example",
+      "outFiles": ["${workspaceFolder}/bc26-on/5_rest_example/dist/**/*.js"]
     }
   ]
 }
