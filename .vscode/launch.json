@@ -176,10 +176,10 @@
       "type": "node",
       "request": "launch",
       "name": "BC26-ON typescript",
-      "program": "${workspaceFolder}/bc26-on/8_auth_example/src/start.ts",
-      "preLaunchTask": "npm: build - bc26-on/8_auth_example",
-      "cwd": "${workspaceFolder}/bc26-on/8_auth_example",
-      "outFiles": ["${workspaceFolder}/bc26-on/8_auth_example/dist/**/*.js"]
+      "program": "${workspaceFolder}/bc26-on/9_files_server/files_server.ts",
+      "preLaunchTask": "npm: build - bc26-on/9_files_server",
+      "cwd": "${workspaceFolder}/bc26-on/9_files_server",
+      "outFiles": ["${workspaceFolder}/bc26-on/9_files_server/dist/**/*.js"]
     }
   ]
 }
