@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^7.0.1",
+    "mocha": "^10.1.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
     "supertest-promised": "^1.0.0"
