@@ -1,0 +1,40 @@
+{
+  "name": "8_auth_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:prod": "node dist/start.js",
+    "start:dev": "ts-node src/start.ts",
+    "build": "tsc",
+    "typeorm": "node_modules/.bin/ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/datasource.ts",
+    "migrations:up": "npm run typeorm migration:run",
+    "migrations:create": "npm run typeorm -- migration:create -n",
+    "migrations:generate": "npm run typeorm -- migration:generate",
+    "migrations:down": "npm run typeorm migration:revert"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "tsconfig-paths": "^4.1.0",
+    "typeorm": "^0.3.10"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.14",
+    "@types/http-errors": "^2.0.1",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.11.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
