@@ -173,6 +173,16 @@
       "type": "node"
     },
     {
+      "name": "bc39on example",
+      "program": "${workspaceFolder}/bc39-on/3_auth_example/src/start.js",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/bc39-on/3_auth_example",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "BC26-ON typescript",
