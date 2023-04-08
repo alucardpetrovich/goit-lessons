@@ -174,9 +174,9 @@
     },
     {
       "name": "bc39on example",
-      "program": "${workspaceFolder}/bc39-on/3_auth_example/src/start.js",
+      "program": "${workspaceFolder}/bc39-on/4_files_server/src/start.js",
       "request": "launch",
-      "cwd": "${workspaceFolder}/bc39-on/3_auth_example",
+      "cwd": "${workspaceFolder}/bc39-on/4_files_server",
       "skipFiles": [
         "<node_internals>/**"
       ],
