@@ -5,8 +5,8 @@ const morgan = require("morgan");
 const { authController } = require("./modules/auth/auth.controller");
 const { connectToRedis } = require("./shared/redis-client");
 
-exports.UsersServer = class {
-  #server;
+exports.AuthServer = class {
+  #app;
   #config;
 
   async start() {
@@ -19,8 +19,21 @@ exports.UsersServer = class {
     this.#startListening();
   }
 
+  async startForTest() {
+    this.#initServer();
+    this.#initConfig();
+    await this.#initDatabases();
+    this.#initMiddlewares();
+    this.#initRoutes();
+    this.#initErrorHandling();
+  }
+
+  getApp() {
+    return this.#app;
+  }
+
   #initServer() {
-    this.#server = express();
+    this.#app = express();
   }
 
   #initConfig() {
@@ -38,16 +51,16 @@ exports.UsersServer = class {
   }
 
   #initMiddlewares() {
-    this.#server.use(express.json({ limit: "5mb" }));
-    this.#server.use(morgan("common"));
+    this.#app.use(express.json({ limit: "5mb" }));
+    this.#app.use(morgan("common"));
   }
 
   #initRoutes() {
-    this.#server.use("/api/auth", authController);
+    this.#app.use("/api/auth", authController);
   }
 
   #initErrorHandling() {
-    this.#server.use((err, req, res, next) => {
+    this.#app.use((err, req, res, next) => {
       const statusCode = err.status || 500;
       if (statusCode === 500) {
         console.log(err);
@@ -61,7 +74,7 @@ exports.UsersServer = class {
   }
 
   #startListening() {
-    this.#server.listen(this.#config.port, () => {
+    this.#app.listen(this.#config.port, () => {
       console.log("Server started listening on port", this.#config.port);
     });
   }

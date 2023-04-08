@@ -1,3 +1,3 @@
-const { UsersServer } = require("./server");
+const { AuthServer } = require("./server");
 
-new UsersServer().start();
+new AuthServer().start();
