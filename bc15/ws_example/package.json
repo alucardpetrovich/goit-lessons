@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "node-validator": "^0.1.27",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
   }
 }
