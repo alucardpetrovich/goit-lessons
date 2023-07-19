@@ -16,6 +16,6 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongodb": "^3.5.5",
-    "mongoose": "^5.9.7"
+    "mongoose": "^5.13.20"
   }
 }
